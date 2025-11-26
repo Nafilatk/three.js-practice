@@ -34,7 +34,6 @@ export default function Day2() {
 
       <RotatingCube />
 
-      {/* Orbit Controls from Drei */}
       <OrbitControls />
     </Canvas>
   );
