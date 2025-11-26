@@ -8,7 +8,6 @@ import * as THREE from "three";
 function RotatingCube() {
   const cubeRef = useRef<THREE.Mesh>(null);
 
-  // Rotate cube every frame
   useFrame(() => {
     if (cubeRef.current) {
       cubeRef.current.rotation.x += 0.01;
