@@ -29,11 +29,9 @@ export default function Day2() {
       camera={{ position: [0, 0, 4], fov: 70 }}
       style={{ width: "100vw", height: "100vh", background: "#111" }}
     >
-      {/* Lights */}
       <directionalLight color="white" intensity={2} position={[5, 5, 5]} />
       <ambientLight intensity={0.2} />
 
-      {/* Cube */}
       <RotatingCube />
 
       {/* Orbit Controls from Drei */}
