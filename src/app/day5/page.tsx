@@ -7,12 +7,10 @@ export default function Text3DPage() {
   return (
     <div className="w-full h-screen">
       <Canvas camera={{ position: [3, 3, 5], fov: 60 }}>
-        {/* Controls */}
         <OrbitControls enableZoom={true} />
 
-        {/* 3D Text */}
         <Text3D
-          font="/fonts/Roboto_Regular.json" // place font file here
+          font="/fonts/Roboto_Regular.json" 
           size={1}
           height={0.4}
           curveSegments={12}
@@ -26,11 +24,9 @@ export default function Text3DPage() {
           <meshStandardMaterial color="#ff66aa" />
         </Text3D>
 
-        {/* Lights */}
         <ambientLight intensity={0.6} />
         <directionalLight position={[5, 5, 5]} intensity={1} />
 
-        {/* Environment */}
         <Environment preset="sunset" />
       </Canvas>
     </div>
