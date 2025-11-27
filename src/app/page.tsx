@@ -1,8 +1,9 @@
-import CubeScene from "./day1/page"
+import dynamic from "next/dynamic";
 
-export default function Home (){
-  return (
-  <CubeScene />
+const GalaxyScene = dynamic(() => import("../components/Galaxy"), {
+  ssr: false,
+});
 
-  )
+export default function Home() {
+  return <GalaxyScene />;
 }
