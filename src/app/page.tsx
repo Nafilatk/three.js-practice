@@ -25,7 +25,9 @@ function ThreeDText() {
           bevelThickness={0.02}
           bevelSize={0.02}
         >
-          Three.js
+          welcome 
+           to 
+           Three.js
           <meshStandardMaterial color="green" />
         </Text3D>
       </Float>
@@ -35,7 +37,7 @@ function ThreeDText() {
 
 export default function Home() {
   return (
-    <div >
+    <div style={{ width: '100vw', height: '100vh' }}>
       <Canvas camera={{ position: [5, 3, 5], fov: 60 }}>
         <color attach="background" args={['#1a1a2e']} />
         
