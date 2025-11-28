@@ -40,3 +40,128 @@ function Planet({ size, distance, orbitSpeed, spinSpeed, textureUrl }: {
     </group>
   );
 }
+
+function Sun() {
+  const sunRef = useRef<THREE.Mesh>(null);
+  const texture = useLoader(THREE.TextureLoader, "/sun.jpg");
+
+  return (
+    <mesh ref={sunRef}>
+      <sphereGeometry args={[2, 32, 32]} />
+      <meshBasicMaterial
+        map={texture}
+        toneMapped={false}
+      />
+      <pointLight intensity={5} distance={200} color="#ffffaa" />
+    </mesh>
+  );
+}
+
+export default function SolarSystem() {
+  const planets = [
+    {
+      name: "Mercury",
+      size: 0.60,
+      distance: 4,
+      orbitSpeed: 0.8,
+      spinSpeed: 0.02,
+      textureUrl: "/mercury.webp"
+    },
+    {
+      name: "Venus",
+      size: 0.70,
+      distance: 6,
+      orbitSpeed: 0.6,
+      spinSpeed: 0.015,
+      textureUrl: "/venus.jpg"
+    },
+    {
+      name: "Earth",
+      size: 0.80,
+      distance: 8,
+      orbitSpeed: 0.5,
+      spinSpeed: 0.02,
+      textureUrl: "/earth.jpg"
+    },
+    {
+      name: "Mars",
+      size: 0.90,
+      distance: 10,
+      orbitSpeed: 0.4,
+      spinSpeed: 0.03,
+      textureUrl: "/mars.jpeg"
+    },
+    {
+      name: "Jupiter",
+      size: 0.90,
+      distance: 13,
+      orbitSpeed: 0.2,
+      spinSpeed: 0.08,
+      textureUrl: "/jupiter.png"
+    },
+    {
+      name: "Saturn",
+      size: 0.95,
+      distance: 16,
+      orbitSpeed: 0.15,
+      spinSpeed: 0.06,
+      textureUrl: "/saturn.jpg"
+    },
+    {
+      name: "Uranus",
+      size: 0.95,
+      distance: 19,
+      orbitSpeed: 0.1,
+      spinSpeed: 0.04,
+      textureUrl: "/uranus.jpg"
+    },
+    {
+      name: "Neptune",
+      size: 1,
+      distance: 22,
+      orbitSpeed: 0.08,
+      spinSpeed: 0.05,
+      textureUrl: "/neptune.jpg"
+    },
+  ];
+
+  return (
+    <div style={{ width: "100vw", height: "100vh" }}>
+      <Canvas camera={{ position: [0, 10, 25] }}>
+        <color attach="background" args={["#000011"]} />
+
+        <ambientLight intensity={0.8} color="#ffffff" />
+
+        <directionalLight
+          position={[10, 10, 5]}
+          intensity={1.5}
+          color="#ffffff"
+          castShadow
+        />
+
+        <pointLight
+          position={[0, 0, 0]}
+          intensity={0.5}
+          distance={50}
+          color="#ffffff"
+        />
+
+        <Sun />
+
+        {planets.map((planet) => (
+          <Planet
+            key={planet.name}
+            size={planet.size}
+            distance={planet.distance}
+            orbitSpeed={planet.orbitSpeed}
+            spinSpeed={planet.spinSpeed}
+            textureUrl={planet.textureUrl}
+          />
+        ))}
+
+        <Stars />
+        <OrbitControls />
+      </Canvas>
+    </div>
+  );
+}
