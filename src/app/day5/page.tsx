@@ -7,7 +7,7 @@ import { Environment, OrbitControls, Sky, useTexture } from "@react-three/drei";
 function RotatingCube() {
   const ref = useRef<THREE.Mesh | null>(null);
 
-  const texture = useTexture("/globeimage.jpg"); // SVG NOT SUPPORTED
+  const texture = useTexture("/image.jpg"); // SVG NOT SUPPORTED
 
   useFrame(() => {
     if (ref.current) {
