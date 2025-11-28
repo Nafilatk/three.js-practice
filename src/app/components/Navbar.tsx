@@ -1,4 +1,12 @@
+import Link from "next/link";
+
 export default function Navbar() {
+  const navItems = [
+    { label: 'Home', href: '/' },
+    { label: 'Globe', href: '/Globe' },
+    { label: 'SolarSystem', href: '/SolarSystem' },
+  ];
+
   return (
     <nav style={{
       position: "fixed",
@@ -23,19 +31,18 @@ export default function Navbar() {
       <div style={{ flex: 1 }} />
       
       <div style={{ display: "flex", gap: "1.5rem" }}>
-        {['Home', 'Globe', 'SolarSystem'].map((item) => (
-          <a 
-            key={item}
-            href="#" 
-            style={{
+        {navItems.map((item) => (
+          <Link key={item.href} href={item.href} >
+            <span style={{
               color: "white",
               textDecoration: "none",
               fontSize: "0.85rem",
               opacity: 0.8,
-            }}
-          >
-            {item}
-          </a>
+              cursor: "pointer",
+            }}>
+              {item.label}
+            </span>
+          </Link>
         ))}
       </div>
     </nav>
