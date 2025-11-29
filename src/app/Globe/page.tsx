@@ -7,7 +7,7 @@ import { Environment, OrbitControls, Sparkles, useTexture } from "@react-three/d
 function RotatingSphere() {
   const ref = useRef<THREE.Mesh | null>(null);
 
-  const texture = useTexture("/image.png"); 
+  const texture = useTexture("/image.png");
 
   useFrame(() => {
     if (ref.current) {
@@ -25,10 +25,10 @@ function RotatingSphere() {
 
 export default function App() {
   return (
-    <div style={{ 
-      width: "100vw", 
-      height: "100vh", 
-      margin: 0, 
+    <div style={{
+      width: "100vw",
+      height: "100vh",
+      margin: 0,
       padding: 0,
       overflow: "hidden",
       position: "fixed",
@@ -40,23 +40,23 @@ export default function App() {
         camera={{ position: [0, 0, 5] }}
       >
         <color attach="background" args={["#000000"]} />
-        
+
         <Environment preset="sunset" />
-        
+
         <ambientLight intensity={0.6} />
-        <directionalLight 
-          position={[10, 10, 5]} 
-          intensity={1} 
+        <directionalLight
+          position={[10, 10, 5]}
+          intensity={1}
           castShadow={true}
         />
-                <Sparkles 
-          count={1000} 
-          speed={0.3} 
-          scale={10} 
-          size={1.5} 
+        <Sparkles
+          count={1000}
+          speed={0.3}
+          scale={10}
+          size={1.5}
           color="#4ade80"
         />
-        
+
         <RotatingSphere />
         <OrbitControls />
       </Canvas>
