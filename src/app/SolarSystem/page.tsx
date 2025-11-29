@@ -77,7 +77,7 @@ export default function SolarSystem() {
       name: "Venus",   
       size: 0.70, 
       distance: 6, 
-      orbitSpeed: 0.6, 
+      orbitSpeed: 0.7, 
       spinSpeed: 0.015, 
       textureUrl: "/venus.jpg" 
     },
@@ -85,7 +85,7 @@ export default function SolarSystem() {
       name: "Earth",   
       size: 0.80, 
       distance: 8, 
-      orbitSpeed: 0.5, 
+      orbitSpeed: 0.6, 
       spinSpeed: 0.02, 
       textureUrl: "/earth.jpg" 
     },
@@ -93,7 +93,7 @@ export default function SolarSystem() {
       name: "Mars",    
       size: 0.90, 
       distance: 10, 
-      orbitSpeed: 0.4, 
+      orbitSpeed: 0.5, 
       spinSpeed: 0.03, 
       textureUrl: "/mars.jpeg" 
     },
@@ -101,7 +101,7 @@ export default function SolarSystem() {
       name: "Jupiter", 
       size: 0.90, 
       distance: 13, 
-      orbitSpeed: 0.2, 
+      orbitSpeed: 0.4, 
       spinSpeed: 0.08, 
       textureUrl: "/jupiter.png" 
     },
@@ -109,7 +109,7 @@ export default function SolarSystem() {
       name: "Saturn",  
       size: 0.95, 
       distance: 16, 
-      orbitSpeed: 0.15, 
+      orbitSpeed: 0.3, 
       spinSpeed: 0.06, 
       textureUrl: "/saturn.jpg" 
     },
@@ -117,7 +117,7 @@ export default function SolarSystem() {
       name: "Uranus",  
       size: 0.95, 
       distance: 19, 
-      orbitSpeed: 0.1, 
+      orbitSpeed: 0.2, 
       spinSpeed: 0.04, 
       textureUrl: "/uranus.jpg" 
     },
@@ -125,7 +125,7 @@ export default function SolarSystem() {
       name: "Neptune", 
       size: 1, 
       distance: 22, 
-      orbitSpeed: 0.08, 
+      orbitSpeed: 0.13, 
       spinSpeed: 0.05, 
       textureUrl: "/neptune.jpg" 
     },
