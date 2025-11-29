@@ -27,9 +27,9 @@ export default function Navbar() {
       }}>
         Three.js App
       </div>
-      
+
       <div style={{ flex: 1 }} />
-      
+
       <div style={{ display: "flex", gap: "1.5rem" }}>
         {navItems.map((item) => (
           <Link key={item.href} href={item.href} >
