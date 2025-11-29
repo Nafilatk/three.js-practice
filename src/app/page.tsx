@@ -40,9 +40,9 @@ function ThreeDText() {
             Welcome to
             <meshStandardMaterial color="#4ade80" />
           </Text3D>
-          
 
-          
+
+
           <Text3D
             font="/fonts/helvetiker_regular.typeface.json"
             size={0.6}
@@ -64,39 +64,39 @@ function ThreeDText() {
 
 export default function Home() {
   return (
-    <div style={{ 
-      width: "100vw", 
-      height: "100vh", 
-      margin: 0, 
+    <div style={{
+      width: "100vw",
+      height: "100vh",
+      margin: 0,
       padding: 0,
       overflow: "hidden",
       position: "fixed",
       top: 0,
       left: 0
     }}>
-      <Canvas 
+      <Canvas
         camera={{ position: [0, 0, 8], fov: 60 }}
         style={{ display: "block" }}
       >
         <color attach="background" args={["#0f0f23"]} />
 
         <ambientLight intensity={0.6} />
-        <directionalLight 
-          position={[10, 10, 5]} 
-          intensity={1} 
+        <directionalLight
+          position={[10, 10, 5]}
+          intensity={1}
           color="#ffffff"
         />
-        <pointLight 
-          position={[-10, -10, -10]} 
-          intensity={0.5} 
+        <pointLight
+          position={[-10, -10, -10]}
+          intensity={0.5}
           color="#36c66bff"
         />
 
-        <Sparkles 
-          count={1000} 
-          speed={0.3} 
-          scale={10} 
-          size={1.5} 
+        <Sparkles
+          count={1000}
+          speed={0.3}
+          scale={10}
+          size={1.5}
           color="#4ade80"
         />
 
@@ -110,7 +110,7 @@ export default function Home() {
 
         <ThreeDText />
 
-        <OrbitControls 
+        <OrbitControls
           enableZoom={true}
           enablePan={false}
           maxPolarAngle={Math.PI / 2}
