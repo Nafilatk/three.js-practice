@@ -4,7 +4,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { useRef } from "react";
 import { Environment, OrbitControls, Sky, useTexture } from "@react-three/drei";
 
-function RotatingCube() {
+function RotatingSphere() {
   const ref = useRef<THREE.Mesh | null>(null);
 
   const texture = useTexture("/image.png"); 
@@ -17,7 +17,7 @@ function RotatingCube() {
 
   return (
     <mesh ref={ref}>
-      <sphereGeometry args={[1.1, 64, 64]} />
+      <sphereGeometry args={[1.1, 100, 100]} />
       <meshStandardMaterial color="white" map={texture} />
     </mesh>
   );
@@ -41,31 +41,20 @@ export default function App() {
       >
         <color attach="background" args={["#000000"]} />
         
-        <Sky sunPosition={[100, 10, 13]} />
+        <Sky sunPosition={[100, 10,  13]} />
         <Environment preset="sunset" />
         
         <ambientLight intensity={0.6} />
         <directionalLight 
           position={[10, 10, 5]} 
           intensity={1} 
-          castShadow
+          castShadow={true}
         />
         
-        <RotatingCube />
+        <RotatingSphere />
         <OrbitControls />
       </Canvas>
 
-      <style jsx global>{`
-        body {
-          margin: 0;
-          padding: 0;
-          overflow: hidden;
-        }
-        #__next {
-          width: 100vw;
-          height: 100vh;
-        }
-      `}</style>
     </div>
   );
 }

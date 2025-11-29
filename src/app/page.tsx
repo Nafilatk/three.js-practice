@@ -27,7 +27,6 @@ function ThreeDText() {
     <Center position={[0, 0, 0]}>
       <Float speed={2} rotationIntensity={0.5} floatIntensity={0.6}>
         <group ref={textRef}>
-          {/* First Line */}
           <Text3D
             font="/fonts/helvetiker_regular.typeface.json"
             size={0.6}
@@ -44,7 +43,6 @@ function ThreeDText() {
           
 
           
-          {/* Third Line */}
           <Text3D
             font="/fonts/helvetiker_regular.typeface.json"
             size={0.6}
@@ -80,10 +78,8 @@ export default function Home() {
         camera={{ position: [0, 0, 8], fov: 60 }}
         style={{ display: "block" }}
       >
-        {/* Full screen background color */}
         <color attach="background" args={["#0f0f23"]} />
 
-        {/* Lighting */}
         <ambientLight intensity={0.6} />
         <directionalLight 
           position={[10, 10, 5]} 
@@ -93,19 +89,17 @@ export default function Home() {
         <pointLight 
           position={[-10, -10, -10]} 
           intensity={0.5} 
-          color="#4ade80"
+          color="#36c66bff"
         />
 
-        {/* Sparkles for magical effect */}
         <Sparkles 
           count={100} 
           speed={0.3} 
-          scale={10} 
+          scale={50} 
           size={1.5} 
           color="#4ade80"
         />
 
-        {/* Soft ground shadow */}
         <ContactShadows
           position={[0, -3, 0]}
           opacity={0.6}
@@ -114,10 +108,8 @@ export default function Home() {
           far={10}
         />
 
-        {/* Main 3D Text */}
         <ThreeDText />
 
-        {/* Controls */}
         <OrbitControls 
           enableZoom={true}
           enablePan={false}
@@ -126,11 +118,9 @@ export default function Home() {
           maxDistance={15}
         />
 
-        {/* Environment */}
         <Environment preset="studio" />
       </Canvas>
 
-      {/* Optional: Add some CSS for full-screen guarantee */}
       <style jsx global>{`
         body {
           margin: 0;
