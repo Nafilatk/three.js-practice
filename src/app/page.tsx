@@ -93,9 +93,9 @@ export default function Home() {
         />
 
         <Sparkles 
-          count={100} 
+          count={1000} 
           speed={0.3} 
-          scale={50} 
+          scale={10} 
           size={1.5} 
           color="#4ade80"
         />

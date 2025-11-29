@@ -2,7 +2,7 @@
 import * as THREE from "three"
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useRef } from "react";
-import { Environment, OrbitControls, Sky, useTexture } from "@react-three/drei";
+import { Environment, OrbitControls, Sparkles, useTexture } from "@react-three/drei";
 
 function RotatingSphere() {
   const ref = useRef<THREE.Mesh | null>(null);
@@ -41,7 +41,6 @@ export default function App() {
       >
         <color attach="background" args={["#000000"]} />
         
-        <Sky sunPosition={[100, 10,  13]} />
         <Environment preset="sunset" />
         
         <ambientLight intensity={0.6} />
@@ -49,6 +48,13 @@ export default function App() {
           position={[10, 10, 5]} 
           intensity={1} 
           castShadow={true}
+        />
+                <Sparkles 
+          count={1000} 
+          speed={0.3} 
+          scale={10} 
+          size={1.5} 
+          color="#4ade80"
         />
         
         <RotatingSphere />
