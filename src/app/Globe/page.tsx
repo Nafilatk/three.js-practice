@@ -7,11 +7,11 @@ import { Environment, OrbitControls, Sparkles, useTexture } from "@react-three/d
 function RotatingSphere() {
   const ref = useRef<THREE.Mesh | null>(null);
 
-  const texture = useTexture("/image.png");
+  const  texture = useTexture("/image.png");
 
   useFrame(() => {
     if (ref.current) {
-      ref.current.rotation.y += 0.01;
+      ref.current.rotation.y  += 0.01 ;
     }
   });
 
