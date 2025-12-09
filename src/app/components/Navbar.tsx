@@ -5,6 +5,7 @@ export default function Navbar() {
     { label: 'Home', href: '/' },
     { label: 'Globe', href: '/Globe' },
     { label: 'SolarSystem', href: '/SolarSystem' },
+    {label: 'Galaxy', href: '/galaxy'}
   ];
 
   return (
